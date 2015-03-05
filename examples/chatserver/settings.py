@@ -1,5 +1,8 @@
 # Django settings for unit test project.
 import os
+import redislite.patch
+
+redislite.patch.patch_redis()
 
 DEBUG = True
 
