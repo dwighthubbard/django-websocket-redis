@@ -48,7 +48,7 @@ setup(
         'uwsgi': ['uWSGI>=1.9.20'],
         'wsaccel': ['wsaccel>=0.6.2'],
         'django-redis-sessions': ['django-redis-sessions>=0.4.0'],
-        'redislite',
+        'redislite': ['redislite'],
     },
     zip_safe=False,
 )
