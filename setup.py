@@ -38,6 +38,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'setuptools',
+        'django',
         'redis',
         'gevent',
         'greenlet',
@@ -47,6 +48,7 @@ setup(
         'uwsgi': ['uWSGI>=1.9.20'],
         'wsaccel': ['wsaccel>=0.6.2'],
         'django-redis-sessions': ['django-redis-sessions>=0.4.0'],
+        'redislite',
     },
     zip_safe=False,
 )
