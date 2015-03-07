@@ -16,7 +16,18 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 2.7',
 ]
 
-
+extras = {
+    'uwsgi': ['uWSGI>=1.9.20'],
+    'wsaccel': ['wsaccel>=0.6.2'],
+    'django-redis-sessions': ['django-redis-sessions>=0.4.0'],
+    'redislite': ['redislite>=1.0.13'],
+}
+all = []
+for prereq in extras.values():
+    all += prereq
+extras['all'] = all
+ 
+extras.keys()
 def read(fname):
     readme_file = os.path.join(os.path.dirname(__file__), fname)
     return os.popen('[ -x "$(which pandoc 2>/dev/null)" ] && pandoc -t rst {0} || cat {0}'.format(readme_file)).read()
@@ -44,11 +55,6 @@ setup(
         'greenlet',
         'six',
     ],
-    extras_require={
-        'uwsgi': ['uWSGI>=1.9.20'],
-        'wsaccel': ['wsaccel>=0.6.2'],
-        'django-redis-sessions': ['django-redis-sessions>=0.4.0'],
-        'redislite': ['redislite'],
-    },
+    extras_require=extras,
     zip_safe=False,
 )

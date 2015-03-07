@@ -9,3 +9,7 @@ docs/_build
 dist
 htmlcov
 /node_modules/
+.tox/
+.idea/
+.coverage
+nosetests.xml
